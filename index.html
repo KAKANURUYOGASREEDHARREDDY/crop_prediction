@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Farming App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <button onclick="switchTab('tab1')">Crop Yield Prediction</button>
+    <button onclick="switchTab('tab2')">Crop Recommendation</button>
+  </div>
+
+  <!-- Tab 1 -->
+  <div id="tab1" class="tab active">
+    <h2>🌾 Crop Yield Prediction</h2>
+    <form id="yieldForm">
+      <label>Choose a State:</label>
+      <select id="state">
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+      </select>
+
+      <label>Choose a District:</label>
+      <select id="district">
+        <option value="KAPARA">KAPARA</option>
+        <option value="TUTICORIN">TUTICORIN</option>
+      </select>
+
+      <label>Choose a Crop (optional):</label>
+      <select id="crop">
+        <option value="">Select</option>
+        <option value="Bajra">Bajra</option>
+        <option value="Arhar">Arhar</option>
+        <option value="Banana">Banana</option>
+        <option value="Paddy">Paddy</option>
+        <option value="Wheat">Wheat</option>
+        <option value="Jowar">Jowar</option>
+        <option value="Millets">Millets</option>
+      </select>
+
+      <label>Choose a Season:</label>
+      <select id="season">
+        <option value="Rabi">Rabi</option>
+        <option value="Kharif">Kharif</option>
+      </select>
+
+      <label>Year:</label>
+      <input type="number" id="year" placeholder="Enter year" value="2022" />
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+
+    <div class="output-box" id="yieldOutput"></div>
+    <div class="image-preview" id="yieldImage"></div>
+  </div>
+
+  <!-- Tab 2 -->
+  <div id="tab2" class="tab">
+    <h2>🌱 Crop Recommendation</h2>
+    <form id="recommendForm">
+      <label>Previous Year's Crop:</label>
+      <input type="text" id="prevCrop" placeholder="e.g., Wheat" />
+
+      <label>Temperature (°C):</label>
+      <input type="number" id="temperature" placeholder="e.g., 28" />
+
+      <label>Humidity (%):</label>
+      <input type="number" id="humidity" placeholder="e.g., 60" />
+
+      <label>Soil Type:</label>
+      <select id="soil">
+        <option value="Loamy">Loamy</option>
+        <option value="Sandy">Sandy</option>
+        <option value="Clay">Clay</option>
+        <option value="Black">Black</option>
+      </select>
+
+      <button type="submit" class="submit-btn">Get Recommendation</button>
+    </form>
+
+    <div class="output-box" id="recommendOutput"></div>
+    <div class="image-preview" id="recommendImage"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
